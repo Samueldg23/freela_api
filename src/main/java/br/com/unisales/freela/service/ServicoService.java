@@ -47,7 +47,7 @@ public class ServicoService {
     }
 
     public List<Servico> listarServicosPorPrestador(Long idPrestador) {
-        return repo.findByIdPrestador(idPrestador);
+        return repo.findByPrestadorId(idPrestador);
     }
 
     public List<Servico> listarServicosPorCategoria(Servico.Categoria categoria) {

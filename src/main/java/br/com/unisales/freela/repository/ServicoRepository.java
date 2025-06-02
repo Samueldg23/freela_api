@@ -11,5 +11,6 @@ import br.com.unisales.freela.model.Servico;
 public interface ServicoRepository extends JpaRepository<Servico, Long> {
     List<Servico> findByCategoria(Servico.Categoria categoria);
     List<Servico> findByNomeContainingIgnoreCase(String nome); 
-    List<Servico> findByIdPrestador(Long idPrestador);
+    List<Servico> findByPrestadorId(Long id);
+
 }
