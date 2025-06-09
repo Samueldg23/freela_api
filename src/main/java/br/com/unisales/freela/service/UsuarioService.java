@@ -52,4 +52,14 @@ public class UsuarioService {
     public List<Usuario> listarUsuarios() {
         return repo.findAll();
     }
+    public String login(String email, String senha) {
+        Usuario usuario = repo.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado!"));
+
+        if (!usuario.getSenha().equals(senha)) {
+            throw new RuntimeException("Senha incorreta!");
+        }
+
+        return "Login realizado com sucesso!";
+    }
 }

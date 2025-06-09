@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.unisales.freela.model.Usuario;
 import br.com.unisales.freela.service.UsuarioService;
 
+
 @RestController
 @RequestMapping("/usuarios")
 @CrossOrigin
@@ -56,9 +57,9 @@ public class UsuarioController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/buscar-por-email")
-    public ResponseEntity<Usuario> buscarPorEmail(@RequestParam String email) {
-        Usuario usuario = service.buscarPorEmail(email);
-        return ResponseEntity.ok(usuario);
+    @GetMapping("/login")
+    public String login(@RequestParam String email, @RequestParam String senha) {
+        return service.login(email, senha);
     }
+
 }
